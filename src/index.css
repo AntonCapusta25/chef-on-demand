@@ -1,0 +1,100 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'NewSpirit';
+  src: url('https://firebasestorage.googleapis.com/v0/b/homemademeals-7040d.appspot.com/o/fonts%2FNewSpirit-BoldCondensed.ttf?alt=media&token=c8efe058-eff2-4ae3-937e-5ec9d0d760cd') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@theme {
+  --font-sans: "Poppins", system-ui, sans-serif;
+
+  --color-primary: #f47a42;
+  --color-primary-foreground: #ffffff;
+
+  --color-background: 0 0% 100%;
+  --color-foreground: 20 14.3% 4.1%;
+  --color-muted: 60 4.8% 95.9%;
+  --color-muted-foreground: 25 5.3% 44.7%;
+  --color-popover: 0 0% 100%;
+  --color-popover-foreground: 20 14.3% 4.1%;
+  --color-card: 0 0% 100%;
+  --color-card-foreground: 20 14.3% 4.1%;
+  --color-border: 20 5.9% 90%;
+  --color-input: 20 5.9% 90%;
+  --color-secondary: 60 4.8% 95.9%;
+  --color-secondary-foreground: 24 9.8% 10%;
+  --color-accent: 60 4.8% 95.9%;
+  --color-accent-foreground: 24 9.8% 10%;
+  --color-destructive: 0 84.2% 60.2%;
+  --color-destructive-foreground: 60 9.1% 97.8%;
+  --color-ring: 20 14.3% 4.1%;
+
+  --radius: 0.5rem;
+}
+
+* {
+  border-color: hsl(var(--color-border));
+}
+
+body {
+  background: hsl(var(--color-background));
+  color: hsl(var(--color-foreground));
+  font-family: var(--font-sans);
+}
+
+/* Container centering */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* Headings and bold text use NewSpirit font */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-bold,
+.font-semibold,
+strong,
+b {
+  font-family: "NewSpirit", system-ui, sans-serif;
+  font-weight: bold;
+}

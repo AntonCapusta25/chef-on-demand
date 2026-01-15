@@ -24,5 +24,24 @@ export async function submitCateringInquiry(inquiry: CateringInquiry) {
         .single();
 
     if (error) throw error;
+
+    // Send email notifications
+    try {
+        const { data: { session } } = await supabase.auth.getSession();
+        const token = session?.access_token || '';
+
+        await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-catering-emails`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token || import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+            },
+            body: JSON.stringify(data),
+        });
+        // Don't throw if email fails - inquiry is already saved
+    } catch (emailError) {
+        console.error('Failed to send email notifications:', emailError);
+    }
+
     return data;
 }

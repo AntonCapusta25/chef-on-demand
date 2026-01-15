@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom';
+
 
 export function Footer() {
     return (
@@ -14,7 +14,7 @@ export function Footer() {
                             alt="Homemade Logo"
                             className="h-16 object-contain"
                             style={{
-                                filter: 'brightness(0) saturate(100%) invert(86%) sepia(16%) saturate(464%) hue-rotate(349deg) brightness(96%) contrast(88%)' // Beige filter
+                                filter: 'brightness(0) invert(1)' // White filter
                             }}
                         />
                         <p className="text-white/60 leading-relaxed">
@@ -22,29 +22,45 @@ export function Footer() {
                         </p>
                     </div>
 
-                    {/* Quick Links */}
-                    <div className="space-y-6">
-                        <h4 className="font-bold text-lg">Quick Links</h4>
-                        <ul className="space-y-3">
-                            <li><Link to="/" className="text-white/60 hover:text-primary transition-colors">Home</Link></li>
-                            <li><Link to="/about" className="text-white/60 hover:text-primary transition-colors">About Us</Link></li>
-                            <li><Link to="/contact" className="text-white/60 hover:text-primary transition-colors">Contact</Link></li>
-                        </ul>
-                    </div>
-
-                    {/* Legal */}
-                    <div className="space-y-6">
-                        <h4 className="font-bold text-lg">Legal</h4>
-                        <ul className="space-y-3">
-                            <li><a href="#" className="text-white/60 hover:text-primary transition-colors">Terms of Service</a></li>
-                            <li><a href="#" className="text-white/60 hover:text-primary transition-colors">Privacy Policy</a></li>
-                            <li><a href="#" className="text-white/60 hover:text-primary transition-colors">Cookie Policy</a></li>
-                        </ul>
+                    {/* Socials */}
+                    <div className="space-y-6 md:col-span-2 flex flex-col items-center md:items-end md:justify-center mt-8 md:mt-0">
+                        <h4 className="font-bold text-lg text-white">Follow Us</h4>
+                        <div className="flex items-center gap-6 flex-wrap justify-center md:justify-end">
+                            {[
+                                { href: "https://www.tiktok.com/@homemademealsnl", alt: "TikTok", src: "https://cdn.prod.website-files.com/67ca169b9408c827cc9df330/67ca169b9408c827cc9df3f8_tiktok-brands.svg" },
+                                { href: "https://www.instagram.com/homemade.bv/", alt: "Instagram", src: "https://cdn.prod.website-files.com/67ca169b9408c827cc9df330/67ca169b9408c827cc9df3f7_instagram-brands.svg" },
+                                { href: "https://www.facebook.com/homemademeals.net", alt: "Facebook", src: "https://cdn.prod.website-files.com/67ca169b9408c827cc9df330/67ca169b9408c827cc9df368_Homemade_dark-15%20(1).png" },
+                                { href: "https://x.com/Homemade___", alt: "X (Twitter)", src: "https://cdn.prod.website-files.com/67ca169b9408c827cc9df330/67ca169b9408c827cc9df3d8_x-twitter-brands.svg" },
+                                { href: "https://nl.pinterest.com/HomemadeBV/", alt: "Pinterest", src: "https://cdn.prod.website-files.com/67ca169b9408c827cc9df330/67ca169b9408c827cc9df3fa_pinterest-brands.svg" },
+                                { href: "https://youtube.com/@homemade-nl?si=9VNI_EKSR-n6P7pW", alt: "YouTube", src: "https://cdn.prod.website-files.com/67ca169b9408c827cc9df330/67ca169b9408c827cc9df3f5_youtube-brands-solid.svg" },
+                                { href: "mailto:Chefs@homemademeals.net", alt: "Email", src: "https://cdn.prod.website-files.com/67ca169b9408c827cc9df330/67ca169b9408c827cc9df3f3_envelope-solid.svg" }
+                            ].map((social, index) => (
+                                <a
+                                    key={index}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group relative p-2"
+                                >
+                                    <div className="absolute inset-0 bg-white/5 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                    <img
+                                        width="22"
+                                        loading="lazy"
+                                        alt={social.alt}
+                                        src={social.src}
+                                        className="relative z-10 transition-all duration-300 transform group-hover:scale-125 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]"
+                                        style={{
+                                            filter: 'brightness(0) invert(1)' // White filter
+                                        }}
+                                    />
+                                </a>
+                            ))}
+                        </div>
                     </div>
                 </div>
 
                 <div className="border-t border-white/10 pt-8 text-center text-white/40 text-sm">
-                    <p>© {new Date().getFullYear()} Chef On-Demand. All rights reserved.</p>
+                    <p>© {new Date().getFullYear()} Homemade B.V. All rights reserved.</p>
                 </div>
             </div>
         </footer>

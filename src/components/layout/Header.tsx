@@ -7,9 +7,9 @@ export function Header() {
             <div className="container flex h-16 items-center justify-between px-4">
                 <Link to="/" className="flex items-center">
                     <img
-                        src="/logo.jpg"
+                        src="/images/logo-homemade.png"
                         alt="Homemade"
-                        className="h-10 w-auto"
+                        className="h-12 w-auto object-contain"
                     />
                 </Link>
 

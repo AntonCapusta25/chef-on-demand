@@ -48,6 +48,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Custom colors for Chef On-Demand
+        dark: {
+          DEFAULT: "#2c2420",
+          foreground: "#ffffff",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -56,6 +61,16 @@ export default {
       },
       fontFamily: {
         sans: ["Poppins", "system-ui", "sans-serif"],
+        heading: ["NewSpirit", "serif"],
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+      },
+      animation: {
+        marquee: "marquee 40s linear infinite",
       },
     },
   },

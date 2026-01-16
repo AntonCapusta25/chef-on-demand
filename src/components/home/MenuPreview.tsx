@@ -78,9 +78,9 @@ export function MenuPreview() {
                                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
                             </div>
 
-                            <div className="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
                                 <h3 className="font-heading text-2xl mb-2">{cuisine.title}</h3>
-                                <p className="text-white/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0 delay-100 mb-4">
+                                <p className="text-white/90 mb-4">
                                     {cuisine.description}
                                 </p>
                                 <button
@@ -88,7 +88,7 @@ export function MenuPreview() {
                                         e.stopPropagation();
                                         scrollToBooking();
                                     }}
-                                    className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0 delay-200 bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full text-sm font-medium"
+                                    className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full text-sm font-medium transition-colors"
                                 >
                                     Book Now
                                 </button>

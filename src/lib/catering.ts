@@ -3,7 +3,7 @@ import { supabase } from './supabase';
 
 export interface CateringInquiry {
     menu_preference: string;
-    chef_preference: string;
+    chef_preference?: string; // Optional - not in form
     cuisine_style: string;
     event_date: string;
     guest_count: number;

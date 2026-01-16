@@ -1,12 +1,12 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Users, ChefHat, Utensils, BookOpen, Star, ArrowRight } from 'lucide-react';
+import { Calendar, Users, Utensils, Star, ArrowRight } from 'lucide-react';
 import { submitCateringInquiry, type CateringInquiry } from '../../lib/catering';
 
 export function CateringBookingSection() {
     const [formData, setFormData] = useState<CateringInquiry>({
-        menu_preference: '',
+        menu_preference: 'Custom', // Default to Custom since field is hidden
         chef_preference: '',
         cuisine_style: '',
         event_date: '',
@@ -63,8 +63,7 @@ export function CateringBookingSection() {
             setCooldownTime(5 * 60); // 5 minutes
 
             setFormData({
-                menu_preference: '',
-                chef_preference: '',
+                menu_preference: 'Custom', // Default to Custom since field is hidden
                 cuisine_style: '',
                 event_date: '',
                 guest_count: 2,
@@ -159,57 +158,23 @@ export function CateringBookingSection() {
 
                         <form onSubmit={handleSubmit} className="space-y-6 relative">
 
-                            {/* Select Menu */}
-                            <div className="space-y-2">
-                                <label className="text-[10px] uppercase tracking-wider text-white/40 font-semibold pl-1">Select Menu</label>
-                                <div className="relative">
-                                    <BookOpen className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30" size={18} />
-                                    <select
-                                        name="menu_preference"
-                                        value={formData.menu_preference}
-                                        onChange={handleChange}
-                                        className="w-full bg-[#3a2e2a] border border-transparent hover:border-white/10 focus:border-[#f47a42]/50 rounded-xl px-4 py-3.5 pl-12 text-white/90 focus:outline-none transition-all placeholder:text-white/20 appearance-none"
-                                        required
-                                    >
-                                        <option value="" className="text-gray-500">-- I'll Customize My Own --</option>
-                                        <option value="suriname" className="text-dark">Suriname Soul Food</option>
-                                        <option value="asian" className="text-dark">Asian Fusion</option>
-                                        <option value="indian" className="text-dark">Indian Spices</option>
-                                        <option value="custom" className="text-dark">Custom Request</option>
-                                    </select>
-                                </div>
-                            </div>
+                            {/* Select Menu - REMOVED */}
 
-                            {/* Chef & Cuisine Row */}
-                            <div className="grid grid-cols-2 gap-4">
-                                <div className="space-y-2">
-                                    <label className="text-[10px] uppercase tracking-wider text-white/40 font-semibold pl-1">Preferred Chef</label>
-                                    <div className="relative">
-                                        <ChefHat className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30" size={18} />
-                                        <input
-                                            type="text"
-                                            name="chef_preference"
-                                            value={formData.chef_preference}
-                                            onChange={handleChange}
-                                            placeholder="Any Chef"
-                                            className="w-full bg-[#3a2e2a] border border-transparent hover:border-white/10 focus:border-[#f47a42]/50 rounded-xl px-4 py-3.5 pl-12 text-white/90 focus:outline-none transition-all placeholder:text-white/30"
-                                        />
-                                    </div>
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-[10px] uppercase tracking-wider text-white/40 font-semibold pl-1">Cuisine Style</label>
-                                    <div className="relative">
-                                        <Utensils className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30" size={18} />
-                                        <input
-                                            type="text"
-                                            name="cuisine_style"
-                                            value={formData.cuisine_style}
-                                            onChange={handleChange}
-                                            placeholder="e.g. Italian"
-                                            className="w-full bg-[#3a2e2a] border border-transparent hover:border-white/10 focus:border-[#f47a42]/50 rounded-xl px-4 py-3.5 pl-12 text-white/90 focus:outline-none transition-all placeholder:text-white/30"
-                                            required
-                                        />
-                                    </div>
+
+                            {/* Cuisine Style */}
+                            <div className="space-y-2">
+                                <label className="text-[10px] uppercase tracking-wider text-white/40 font-semibold pl-1">Cuisine Style</label>
+                                <div className="relative">
+                                    <Utensils className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30" size={18} />
+                                    <input
+                                        type="text"
+                                        name="cuisine_style"
+                                        value={formData.cuisine_style}
+                                        onChange={handleChange}
+                                        placeholder="e.g. Italian"
+                                        className="w-full bg-[#3a2e2a] border border-transparent hover:border-white/10 focus:border-[#f47a42]/50 rounded-xl px-4 py-3.5 pl-12 text-white/90 focus:outline-none transition-all placeholder:text-white/30"
+                                        required
+                                    />
                                 </div>
                             </div>
 

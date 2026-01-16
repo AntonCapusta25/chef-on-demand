@@ -26,7 +26,7 @@ export function PartnersSection() {
                 <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
                 {/* Strip 1 */}
-                <div className="flex shrink-0 animate-marquee items-center gap-32 pr-32">
+                <div className="flex shrink-0 animate-marquee items-center gap-16 pr-16">
                     {displayPartners.map((partner, index) => (
                         <div
                             key={`s1-${index}`}
@@ -45,7 +45,7 @@ export function PartnersSection() {
                 </div>
 
                 {/* Strip 2 (Identical Copy) */}
-                <div className="flex shrink-0 animate-marquee items-center gap-32 pr-32" aria-hidden="true">
+                <div className="flex shrink-0 animate-marquee items-center gap-16 pr-16" aria-hidden="true">
                     {displayPartners.map((partner, index) => (
                         <div
                             key={`s2-${index}`}

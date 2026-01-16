@@ -2,10 +2,10 @@ import { Button } from '../ui/button';
 import { ArrowRight } from 'lucide-react';
 
 export function HeroSection() {
-    const scrollToChefs = () => {
-        const chefsSection = document.getElementById('chefs-section');
-        if (chefsSection) {
-            chefsSection.scrollIntoView({ behavior: 'smooth' });
+    const scrollToBooking = () => {
+        const bookingSection = document.getElementById('booking');
+        if (bookingSection) {
+            bookingSection.scrollIntoView({ behavior: 'smooth' });
         }
     };
 
@@ -31,7 +31,7 @@ export function HeroSection() {
 
                         <div>
                             <Button
-                                onClick={scrollToChefs}
+                                onClick={scrollToBooking}
                                 size="lg"
                                 className="inline-flex items-center gap-2 h-12 px-8 py-3 shadow-sm hover:shadow active:scale-[0.98] active:shadow-inner transition-all duration-200"
                             >

@@ -11,7 +11,7 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY)
 interface CateringInquiry {
   id: string
   menu_preference: string
-  chef_preference: string
+  chef_preference?: string // Optional field
   cuisine_style: string
   event_date: string
   guest_count: number
